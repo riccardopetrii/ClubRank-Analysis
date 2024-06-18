@@ -1,0 +1,33 @@
+* {
+    font-family: Helvetica !important;
+    color: rgb(42, 42, 42);
+}
+
+button {
+    border-radius: 7px;
+    border-style: solid;
+}
+
+h2, h3 {
+    padding-bottom: 5px;
+}
+
+p {
+    padding-bottom: 5px;
+}
+
+li {
+    padding: 5px;
+}
+
+ul > ul > li {
+    list-style-type: circle;
+}
+
+.reveal .slide-number {
+    margin-right: 120px;
+    margin-bottom: 40px;
+    font-size: 24pt;
+    background: rgba(211, 211, 211, 0.699);
+    border-radius: 7px;
+}
