@@ -47,7 +47,6 @@ for year in range(start_year, end_year + 1):
 			'numpos': '',
 			'year': year,
 			# 'website': '',
-			# 'link': '',
 		}
 		
 		temp = clubTag.a['href'].split("/")
@@ -70,7 +69,7 @@ for year in range(start_year, end_year + 1):
 
 		clubInfo = clubSoup.findAll('p')
 		
-		location = clubInfo[0].text.split(':')[1].replace('Capacity', '').strip() # fix for year 2020 (problem with capacity)
+		location = clubInfo[0].text.split(':')[1].replace('Capacity', '').strip() # fix for year 2020
 		
 		# split location
 
@@ -91,7 +90,6 @@ for year in range(start_year, end_year + 1):
 			club['city'] = location
 			club['country'] = "Unknown"
 
-		# check
 		if club['country'] != "Unknown":
 			floc = str(club['city'] + ', ' + club['country'])
 		else:
@@ -115,7 +113,6 @@ for year in range(start_year, end_year + 1):
 			try:
 				club['capacity'] = int(cap)
 
-				# temporary fix
 				if club['capacity'] > 100000:
 					club['capacity'] = "Unknown"
 			except:
@@ -136,15 +133,15 @@ for year in range(start_year, end_year + 1):
 		# 	if tempw == "":
 		# 		club['website'] = "Undefined"
 		# 	else:
-		# 		club['website'] = tempw
+		# 		club['website'] = temp
 
-		# todo: get tripadvisor rating
+		#todo: get tripadvisor rating
 
 		clubs.append(club)
 
 output_folder = os.path.join(os.path.dirname(__file__), 'Output JSON')
 os.makedirs(output_folder, exist_ok=True)
-output_file = os.path.join(output_folder, 'top_clubs_' + str(start_year) + '_' + str(end_year) + '.json') # output in the Output JSON folder
+output_file = os.path.join(output_folder, 'top_clubs_' + str(start_year) + '_' + str(end_year) + '.json')
 
 with open(output_file, 'w') as fp:
 	json.dump(clubs, fp, indent=4)
