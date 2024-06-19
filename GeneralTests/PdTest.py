@@ -1,4 +1,4 @@
-import numpy as np # todo
+import numpy as np
 import pandas as pd
 
 df = pd.read_json('top_clubs_2018_2024.json')
