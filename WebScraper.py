@@ -135,8 +135,6 @@ for year in range(start_year, end_year + 1):
 		# 	else:
 		# 		club['website'] = temp
 
-		#todo: get tripadvisor rating
-
 		clubs.append(club)
 
 output_folder = os.path.join(os.path.dirname(__file__), 'Output JSON')
